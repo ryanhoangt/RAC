@@ -87,7 +87,7 @@ python src/open_r1/grpo.py \
 After collecting traces, they will be saved under the `save_dir`. For example:
 
 ```
-<OUTPUT_DIR>/dataset_DeepSeek-R1-Distill-Qwen-14B_trace_codeforces-firstsol
+<OUTPUT_DIR>/dataset_DeepSeek-R1-Distill-Qwen-14B_trace_codeforces
 ```
 
 ### Prompt + CoT pruning
