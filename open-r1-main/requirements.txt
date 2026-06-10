@@ -1,9 +1,9 @@
 vllm
 setuptools
-flash-attn
+https://github.com/Dao-AILab/flash-attention/releases/download/v2.8.3/flash_attn-2.8.3+cu12torch2.5cxx11abiFALSE-cp311-cp311-linux_x86_64.whl
 lighteval
 math_verify
-torch
+torch==2.5.1
 triton
 async_lru
 deepspeed==0.16.9
