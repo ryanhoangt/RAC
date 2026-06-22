@@ -29,11 +29,11 @@ MODEL_TAG=$(basename "$MODEL_DIR")
 MODEL_ARGS="model_name=${MODEL_DIR},\
 dtype=bfloat16,\
 trust_remote_code=true,\
-max_model_length=32768,\
-gpu_memory_utilization=0.8,\
-max_num_batched_tokens=32768,\
+max_model_length=16384,\
+gpu_memory_utilization=0.85,\
+max_num_batched_tokens=16384,\
 data_parallel_size=${NUM_GPUS},\
-generation_parameters={max_new_tokens:32768,temperature:0.6,top_p:0.95}"
+generation_parameters={max_new_tokens:16384,temperature:0.6,top_p:0.95}"
 
 OUTPUT_DIR=eval_outputs/
 
