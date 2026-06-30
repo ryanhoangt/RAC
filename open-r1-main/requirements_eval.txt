@@ -1,0 +1,22 @@
+vllm==0.10.0
+setuptools
+# https://github.com/Dao-AILab/flash-attention/releases/download/v2.8.3/flash_attn-2.8.3+cu12torch2.7cxx11abiFALSE-cp311-cp311-linux_x86_64.whl # for torch 2.7 / cu12 / cp311
+lighteval==0.13.0
+latex2sympy2_extended==1.0.6  # lighteval 0.13.0 hard-requires this exact version (see note)
+torch==2.7.1
+triton==3.3.1
+async_lru==2.3.0
+deepspeed==0.16.7
+liger-kernel==0.8.0
+filelock==3.29.0
+matplotlib==3.10.9
+transformers==4.57.6
+more_itertools==11.1.0  # lighteval's vllm path imports it; not pulled in without the [vllm] extra
+
+# NOTE: do NOT install the standalone `math-verify` package here.
+# lighteval 0.13.0 hard-requires latex2sympy2_extended==1.0.6 and does its math grading
+# through it directly. The standalone math-verify==0.9.0 depends on
+# latex2sympy2_extended==1.11.0, which makes `lighteval` fail to import:
+#   ImportError: you requested ... latex2sympy2_extended==1.0.6 ... but it is not available
+# (This is why lannth's env had a broken lighteval CLI -- math-verify had bumped it to 1.11.0.)
+# Keep latex2sympy2_extended pinned at 1.0.6 and leave math-verify uninstalled for eval.
